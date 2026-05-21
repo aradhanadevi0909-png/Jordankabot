@@ -43,7 +43,7 @@ async def check_cc(cc: str) -> tuple:
     """
     # Remove any whitespace and validate format
     cc = cc.strip()
-    if not re.match(r'^\d{16}[|\s]?\d{2}[|\s]?\d{2}[|\s]?\d{3,4}$', cc):
+    if not re.match(r'^\d{16}[|\s]?\d{2}[|\s]?\d{2,4}[|\s]?\d{3,4}$', cc):
         return "error", "Invalid CC format"
     
     # Example API call - replace with actual implementation
