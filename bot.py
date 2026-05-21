@@ -49,9 +49,8 @@ async def check_cc(cc: str) -> tuple:
     # Example API call - replace with actual implementation
     try:
         async with aiohttp.ClientSession() as session:
-            # Replace with your actual API endpoint and parameters
-            payload = {"cc": cc}
-            async with session.post(CC_CHECK_API, json=payload, timeout=30) as resp:
+            # Replace with your actual API endpoint and paramete
+            async with session.get(CC_CHECK_API+"?cc="+str(cc.strip()), timeout=30) as resp:
                 if resp.status == 200:
                     data = await resp.json()
                     # Parse response based on your API
